@@ -1,0 +1,28 @@
+extends layout 
+block content 
+    form(name="hhiker" action="/InsertNewHitchHiker" onsubmit="return validateHHikerForm()" method="post")
+        input(type="hidden" ,id="latitude", name="latitude")
+        input(type="hidden", id="longitude", name="longitude")
+        input(type="hidden", id="timestamp", name="timestamp")
+        div(class="lbl") Full Name:
+        div(class="input")
+            input(id="fullname" type="text" onfocusout="GetLocation()" name="fullname" placeholder="Your Full Name")
+        div(class="lbl") Student Email:
+        div(class="input")
+            input(id="email" type="email" name="email" placeholder="Your Email")
+        div(class="lbl") Phone Number:
+        div(class="input")
+            input(id="phone" type="tel" name="phone" placeholder="Your phone number")
+        div(class="lbl") Final Destination:
+        div(class="input")
+            select(class="Cities" id="dest" name="dest")
+                option(value="" disabled selected hidden)
+                option(value="Tel Aviv") Tel Aviv
+                option(value="Jerusalem") Jerusalem
+                option(value="Haifa") Haifa
+                option(value="Ashdod") Ashdod
+                option(value="Nahariya") Nahariya
+        br
+        input(id="subm" type="submit" name="submit" value="Submit" onclick= "currentTime()")
+
+    div(id="errbox" class="hidemsg" onclick="this.className='hidemsg'") Test 
